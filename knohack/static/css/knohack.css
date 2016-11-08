@@ -1,0 +1,16 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden; /* For Opera */
+  margin: auto;
+  text-align: center;
+  background-color: #3f4a75;;
+}
+.container{
+  background-color:white;
+  width: 80%;
+  padding: 10px;
+  margin: auto;
+  color: #222C52;
+  max-width: 700px;
+  border: 3px solid #222C52;
+}

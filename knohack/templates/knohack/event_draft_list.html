@@ -1,0 +1,9 @@
+{% extends 'knohack/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+            created: {{ post.created_date|date:'d-m-Y' }}</p>
+            <h1><a href="{% url 'event_detail' pk=post.pk %}">{{ event.event_name }}</a></h1>
+            <p>{{ event.event_info }}</p>
+    {% endfor %}
+{% endblock %}

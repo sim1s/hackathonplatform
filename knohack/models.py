@@ -4,6 +4,7 @@ from django.utils import timezone
 #from tinymce.models import HTMLField
 
 class Event(models.Model):
+    host = models.ForeignKey('auth.User')
     event_name = models.CharField(max_length=75)
     event_theme = models.CharField(max_length=75, blank = True)
     #change to min/max grade
@@ -34,9 +35,10 @@ class Event(models.Model):
                     null = True, blank = True)
     event_access_code = models.CharField(max_length=10, help_text = "clarify: 10 or fewer character access code for your event.")
     registration_code = models.CharField(max_length=10, help_text = "clarify: 10 or fewer character access code for your event.")
+    created_date = models.DateTimeField(blank=True, null=True)
 
-    def publish(self):
-        self.published_date = timezone.now()
+    def create(self):
+        self.created_date = timezone.now()
         self.save()
 
     def __str__(self):

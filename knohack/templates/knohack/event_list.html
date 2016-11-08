@@ -1,0 +1,12 @@
+{% extends 'knohack/base.html' %}
+
+{% block content %}
+
+{% for event in events %}
+    <div>
+        <p>time: {{ event.start_time }}</p>
+        <h1><a href="{% url 'event_detail' pk=event.pk %}">{{ event.event_name }}</a></h1>
+        <p>{{ event.city }}, {{ event.state }}</p>
+    </div>
+{% endfor %}
+{% endblock %}

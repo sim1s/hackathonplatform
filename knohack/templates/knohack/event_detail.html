@@ -1,0 +1,14 @@
+{% extends 'knohack/base.html' %}
+
+{% block content %}
+      {% if event.created_date %}
+              {{ event.published_date }}
+      {% else %}
+          <a class="btn btn-default" href="{% url 'event_create' pk=event.pk %}">Create</a>
+      {% endif %}
+          <a class="btn btn-default" href="{% url 'event_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+          <a class="btn btn-default" href="{% url 'event_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+        <h1>{{ event.event_name }}</h1>
+        <p>{{ event.event_info }}</p>
+    </div>
+{% endblock %}

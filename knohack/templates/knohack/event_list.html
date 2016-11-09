@@ -2,11 +2,13 @@
 
 {% block content %}
 
+<a href="{% url 'create_new_event' %}">Create New Event</a> 
+
 {% for event in events %}
     <div>
-        <p>time: {{ event.start_time }}</p>
         <h1><a href="{% url 'event_detail' pk=event.pk %}">{{ event.event_name }}</a></h1>
         <p>{{ event.city }}, {{ event.state }}</p>
+        <p>{{ event.start_time }}</p>
     </div>
 {% endfor %}
 {% endblock %}
